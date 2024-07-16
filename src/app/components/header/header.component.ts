@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AngularMaterialModule } from '../../modules/angular-material/angular-material.module';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-header', 
   standalone: true,
   imports: [CommonModule, AngularMaterialModule],
   templateUrl: './header.component.html',
