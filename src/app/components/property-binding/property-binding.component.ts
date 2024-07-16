@@ -10,5 +10,5 @@ import { AngularMaterialModule } from '../../modules/angular-material/angular-ma
   styleUrl: './property-binding.component.css'
 })
 export class PropertyBindingComponent {
-
+  isDisabled = false
 }

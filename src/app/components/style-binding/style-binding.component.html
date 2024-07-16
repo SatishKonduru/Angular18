@@ -1,0 +1,21 @@
+<div style="display: flex; justify-content: center;">
+    <p style="font-size: 25px; color:brown;">Style Binding</p>
+</div>
+<div style=" color:blue;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed error pariatur aliquid necessitatibus dolore possimus corrupti distinctio harum est earum reprehenderit quibusdam accusantium a, amet, illo quod vel, soluta excepturi?
+</div>
+<div [style.color]="textColor">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed error pariatur aliquid necessitatibus dolore possimus corrupti distinctio harum est earum reprehenderit quibusdam accusantium a, amet, illo quod vel, soluta excepturi?
+</div>
+<div [style.fontSize]="textSize">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed error pariatur aliquid necessitatibus dolore possimus corrupti distinctio harum est earum reprehenderit quibusdam accusantium a, amet, illo quod vel, soluta excepturi?
+</div>
+<div [ngStyle]="myStyle">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed error pariatur aliquid necessitatibus dolore possimus corrupti distinctio harum est earum reprehenderit quibusdam accusantium a, amet, illo quod vel, soluta excepturi?
+</div>
+<div [ngStyle]="myValue > 10 ? {fontSize: textSize} : {color: textColor}">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed error pariatur aliquid necessitatibus dolore possimus corrupti distinctio harum est earum reprehenderit quibusdam accusantium a, amet, illo quod vel, soluta excepturi?
+</div>
+<div [ngStyle]="false ? {color: 'green'} : {color: 'red'}">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed error pariatur aliquid necessitatibus dolore possimus corrupti distinctio harum est earum reprehenderit quibusdam accusantium a, amet, illo quod vel, soluta excepturi?
+</div>

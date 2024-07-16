@@ -1,0 +1,28 @@
+<div style="display: flex; justify-content: center;">
+    <p style="font-size: 25px; color:brown;">Class Binding</p>
+</div>
+
+<div class="textColor">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe rerum reprehenderit nesciunt velit. Architecto hic soluta molestiae eveniet! Quis aperiam dolores fugiat minus nam ea quas sapiente similique corrupti.
+</div>
+<div [class]="textColor">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe rerum reprehenderit nesciunt velit. Architecto hic soluta molestiae eveniet! Quis aperiam dolores fugiat minus nam ea quas sapiente similique corrupti.
+</div>
+<div [class]="textSize">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe rerum reprehenderit nesciunt velit. Architecto hic soluta molestiae eveniet! Quis aperiam dolores fugiat minus nam ea quas sapiente similique corrupti.
+</div>
+<div [ngClass]="myClass">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe rerum reprehenderit nesciunt velit. Architecto hic soluta molestiae eveniet! Quis aperiam dolores fugiat minus nam ea quas sapiente similique corrupti.
+</div>
+<div [ngClass]="'textColor textSize'">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe rerum reprehenderit nesciunt velit. Architecto hic soluta molestiae eveniet! Quis aperiam dolores fugiat minus nam ea quas sapiente similique corrupti.
+</div>
+<div [ngClass]="['textColor', 'textSize']">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe rerum reprehenderit nesciunt velit. Architecto hic soluta molestiae eveniet! Quis aperiam dolores fugiat minus nam ea quas sapiente similique corrupti.
+</div>
+<div [ngClass]="{ 'textColor': true, 'textSize': true}">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe rerum reprehenderit nesciunt velit. Architecto hic soluta molestiae eveniet! Quis aperiam dolores fugiat minus nam ea quas sapiente similique corrupti.
+</div>
+<div [ngClass]="{ 'textColor': 2-2 , 'textSize': 10<50}">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe rerum reprehenderit nesciunt velit. Architecto hic soluta molestiae eveniet! Quis aperiam dolores fugiat minus nam ea quas sapiente similique corrupti.
+</div>
