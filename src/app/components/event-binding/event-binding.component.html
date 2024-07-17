@@ -1,3 +1,8 @@
 <div style="display: flex; justify-content: center;">
     <p style="font-size: 25px; color:brown;">Event Binding</p>
 </div>
+<div style="display: flex; justify-content: center;">
+   <button mat-raised-button (click)="getName()" style="color:blue">Display Name</button> 
+   <button mat-raised-button (click)="clear()">Clear</button> 
+</div>
+<p style="font-size: 25px; color:blue;">Name: {{name}}</p>
