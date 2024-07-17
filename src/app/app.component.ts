@@ -7,11 +7,12 @@ import { StyleBindingComponent } from "./components/style-binding/style-binding.
 import { ClassBindingComponent } from "./components/class-binding/class-binding.component";
 import { EventBindingComponent } from "./components/event-binding/event-binding.component";
 import { TempRefVariablesComponent } from "./components/temp-ref-variables/temp-ref-variables.component";
+import { TwoWayDataBindingComponent } from "./components/two-way-data-binding/two-way-data-binding.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, InterpolationComponent, PropertyBindingComponent, StyleBindingComponent, ClassBindingComponent, EventBindingComponent, TempRefVariablesComponent],
+  imports: [RouterOutlet, HeaderComponent, InterpolationComponent, PropertyBindingComponent, StyleBindingComponent, ClassBindingComponent, EventBindingComponent, TempRefVariablesComponent, TwoWayDataBindingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
