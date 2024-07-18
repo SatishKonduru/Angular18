@@ -1,0 +1,50 @@
+<div style="display: flex; justify-content: center;">
+    <p style="font-size: 25px; color:brown;">&#64; for {{ '{ }' }} </p>
+    
+</div>
+<mat-divider></mat-divider>
+<div class="container">
+    @for(num of numbers; track num){
+        <div style="font-size: 25px; color:brown;"> {{num}}</div>
+}
+</div>
+<mat-divider></mat-divider>
+<div class="container">
+    @for(p of persons; track p; let i = $index){
+        <div style="font-size: 25px; color:brown;"> {{i}}: {{p.name}}</div>
+}
+</div>
+<mat-divider></mat-divider>
+<div class="container">
+    @for(p of persons; track p; let f = $first){
+        <div style="font-size: 25px; color:brown;"> {{p.name}} =>  {{f}}</div>
+}
+</div>
+<mat-divider></mat-divider>
+<div class="container">
+    @for(p of persons; track p; let l = $last){
+        <div style="font-size: 25px; color:brown;"> {{p.name}} => {{l}}</div>
+}
+</div>
+<mat-divider></mat-divider>
+<div class="container">
+    @for(p of persons; track p; let e = $even){
+        <div style="font-size: 25px; color:brown;"> {{p.name}} => {{e}}</div>
+}
+</div>
+<mat-divider></mat-divider>
+<div class="container">
+    @for(p of persons; track p; let o = $even){
+        <div style="font-size: 25px; color:brown;"> {{p.name}} => {{o}}</div>
+}
+</div>
+<div class="container">
+    @for(c of courses; track c){
+        <div style="font-size: 25px; color:brown;"> {{c.name}} </div>
+}
+@empty {
+    <div style="font-size: 25px; color:blue;">No Data avaliable</div>
+}
+</div>
+
+    

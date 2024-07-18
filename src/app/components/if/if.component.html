@@ -1,0 +1,13 @@
+<div style="display: flex; justify-content: center;">
+    <p style="font-size: 25px; color:brown;">&#64; if {{ '{ } @else {}' }} </p>
+</div>
+<div style="display: flex; justify-content: center;">
+    <!-- <p style="font-size: 25px; color:blue;" *ngIf="show"> Name:  {{student.name}} </p> -->
+@if(show){
+        <p style="font-size: 25px; color:blue;" > Name:  {{student.name}} </p> 
+        
+    }
+@else {
+    <p style="font-size: 25px; color:#ff006a;" > No Students are available </p>  
+}
+</div>

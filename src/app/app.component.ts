@@ -8,11 +8,14 @@ import { ClassBindingComponent } from "./components/class-binding/class-binding.
 import { EventBindingComponent } from "./components/event-binding/event-binding.component";
 import { TempRefVariablesComponent } from "./components/temp-ref-variables/temp-ref-variables.component";
 import { TwoWayDataBindingComponent } from "./components/two-way-data-binding/two-way-data-binding.component";
+import { IfComponent } from "./components/if/if.component";
+import { SwitchComponent } from "./components/switch/switch.component";
+import { ForComponent } from "./components/for/for.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, InterpolationComponent, PropertyBindingComponent, StyleBindingComponent, ClassBindingComponent, EventBindingComponent, TempRefVariablesComponent, TwoWayDataBindingComponent],
+  imports: [RouterOutlet, HeaderComponent, InterpolationComponent, PropertyBindingComponent, StyleBindingComponent, ClassBindingComponent, EventBindingComponent, TempRefVariablesComponent, TwoWayDataBindingComponent, IfComponent, SwitchComponent, ForComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
