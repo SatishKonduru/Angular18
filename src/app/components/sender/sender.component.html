@@ -1,0 +1,18 @@
+<!-- <div style="display: flex; justify-content: center;">
+    <p style="font-size: 25px; color:brown;">Component Communication </p>
+</div> -->
+<app-topic [topicName]="topic"></app-topic>
+<div class="container d-flex gap-5">
+    <div style="width: 500px; height: 500px; background-color: bisque;">
+        <div class="p-3">
+            <h4><u>Sender Component:</u></h4>
+            <h5>Message: </h5><h4>{{incomingMsg}}</h4>
+        </div>
+        
+    </div>
+    <div style="width: 500px; height: 500px; background-color: plum;">
+        <div class="p-3">
+            <app-receiver (reply)="incomingMsg = $event" [postman]="message"></app-receiver>
+        </div>
+    </div>
+</div>
