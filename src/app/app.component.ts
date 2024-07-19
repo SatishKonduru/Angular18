@@ -12,11 +12,13 @@ import { IfComponent } from "./components/if/if.component";
 import { SwitchComponent } from "./components/switch/switch.component";
 import { ForComponent } from "./components/for/for.component";
 import { SenderComponent } from "./components/sender/sender.component";
+import { ViewChildComponent } from "./components/view-child/view-child.component";
+import { ParentComponent } from "./components/parent/parent.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, InterpolationComponent, PropertyBindingComponent, StyleBindingComponent, ClassBindingComponent, EventBindingComponent, TempRefVariablesComponent, TwoWayDataBindingComponent, IfComponent, SwitchComponent, ForComponent, SenderComponent],
+  imports: [RouterOutlet, HeaderComponent, InterpolationComponent, PropertyBindingComponent, StyleBindingComponent, ClassBindingComponent, EventBindingComponent, TempRefVariablesComponent, TwoWayDataBindingComponent, IfComponent, SwitchComponent, ForComponent, SenderComponent, ViewChildComponent, ParentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
