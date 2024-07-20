@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class ChildComponent {
   childProperty = 'Hello from Child!';
+ 
   
   childMethod() {
     console.log('Method in Child Component');

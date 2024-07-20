@@ -1,0 +1,17 @@
+<app-topic [topicName]="topic"></app-topic>
+
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-title">
+            <h2>This is Content Parent Component</h2>
+        </div>
+        <div class="card-body">
+            <h3>Data projected to child component:</h3>
+            <div class="w-25 h-25 bg-danger-subtle">
+                <ng-content></ng-content>
+            </div>
+            <mat-divider></mat-divider>
+        </div>
+    </div>
+</div>
