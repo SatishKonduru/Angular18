@@ -6,7 +6,9 @@
 <mat-toolbar style="background-color: whitesmoke; color:white; height: 50px;">
     <span>
         <button mat-raised-button [routerLink]="'/course'" routerLinkActive="active">Course</button>
-        <button mat-raised-button [routerLink]="'/courseDetails'" routerLinkActive="active">Course Details</button>
+        <button mat-raised-button [routerLink]="'/courseDetails'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Course Details</button>
     </span>
+   
     
 </mat-toolbar>
+
