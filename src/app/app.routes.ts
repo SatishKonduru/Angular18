@@ -5,7 +5,7 @@ import { IfComponent } from './components/if/if.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SelectedCourseComponent } from './components/selected-course/selected-course.component';
 import { SelectedCourseDetailsComponent } from './components/selected-course-details/selected-course-details.component';
-import { HomeComponent } from './components/components/home/home.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 export const routes: Routes = [
