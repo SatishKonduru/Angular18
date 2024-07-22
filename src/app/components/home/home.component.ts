@@ -8,11 +8,12 @@ import { ProductsComponent } from "../products/products.component";
 import { CareersComponent } from "../careers/careers.component";
 import { ContactusComponent } from "../contactus/contactus.component";
 import { DemoComponent } from '../demo/demo.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AngularMaterialModule, AboutusComponent, ServicesComponent, ProductsComponent, CareersComponent, ContactusComponent, DemoComponent],
+  imports: [AngularMaterialModule, AboutusComponent, ServicesComponent, ProductsComponent, CareersComponent, ContactusComponent, DemoComponent, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

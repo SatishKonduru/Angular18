@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-demo',
@@ -10,4 +10,6 @@ import { Component, Input } from '@angular/core';
 })
 export class DemoComponent {
 @Input() message: any
+
+
 }

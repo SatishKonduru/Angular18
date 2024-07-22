@@ -19,13 +19,13 @@
 <div class="container">
     <div class="mt-3">
         <mat-form-field appearance="outline">
-          
-            <input matInput #input placeholder="Enter anything...">
+            <mat-label>Enter</mat-label>
+          <input matInput #input placeholder="Enter anything...">
         </mat-form-field>
     </div>
     <div>
         <button mat-stroked-button (click)="onClick(input.value)">Click me</button>
     </div>
     <app-demo [message]="inputValue"></app-demo>
-    <h1>Satish</h1>
+   
 </div>

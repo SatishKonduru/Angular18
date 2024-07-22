@@ -14,9 +14,9 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 export class HeaderComponent {
   activatedRoute = inject(ActivatedRoute)
   ngOnInit(){
-    this.activatedRoute.fragment.subscribe(data => {
-      this.jumpToSection(data)
-    })
+    // this.activatedRoute.fragment.subscribe(data => {
+    //   // this.jumpToSection(data)
+    // })
   }
 
   jumpToSection(section: any){
