@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="card w-1/2 mt-3 mx-auto">
+        <div class="card-body">
+            <div><span class="text-red-600">Id:</span> {{myCourse.id}}</div>
+            <div><span class="text-red-600">Name:</span> {{myCourse.name}}</div>
+            <div><span class="text-red-600">Tutor:</span> {{myCourse.tutor}}</div>
+        </div>
+        <div class="card-footer">
+            <button mat-button (click)="goBack()">Back</button>
+            <button mat-button (click)="viewDetails()">View Details</button>
+        </div>
+    </div>
+    
+</div>
+<router-outlet></router-outlet>
