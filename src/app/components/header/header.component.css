@@ -5,3 +5,8 @@
     background-color: green !important;
     color: white !important;
 }
+span{
+    margin-left: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

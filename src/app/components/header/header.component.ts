@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AngularMaterialModule } from '../../modules/angular-material/angular-material.module';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header', 
@@ -12,5 +12,14 @@ import { RouterModule } from '@angular/router';
   preserveWhitespaces: true,
 })
 export class HeaderComponent {
+  activatedRoute = inject(ActivatedRoute)
+  ngOnInit(){
+    this.activatedRoute.fragment.subscribe(data => {
+      this.jumpToSection(data)
+    })
+  }
 
+  jumpToSection(section: any){
+    document.getElementById(section).scrollIntoView({behavior: 'smooth'})
+  }
 }
