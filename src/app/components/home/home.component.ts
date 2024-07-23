@@ -18,11 +18,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  inputValue: any
-  constructor(){
-    console.log("Home Constructor is called")
-  }
+  inputValue = ['Konduru']
+  // constructor(){
+  //   console.log("Home Constructor is called")
+  // }
   onClick(value: any){
-    this.inputValue = value
+    // this.inputValue = value
+    this.inputValue.push(value)
   }
 }
