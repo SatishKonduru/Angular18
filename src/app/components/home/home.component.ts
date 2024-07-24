@@ -19,11 +19,17 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent {
   inputValue = ['Konduru']
+  check = 0
+  ngOnInit(){
+    setInterval(()=>{this.check++},1000)
+  }
+  myInputValue = ''
   // constructor(){
   //   console.log("Home Constructor is called")
   // }
   onClick(value: any){
     // this.inputValue = value
-    this.inputValue.push(value)
+    // this.inputValue.push(value)
+    this.myInputValue = value
   }
 }

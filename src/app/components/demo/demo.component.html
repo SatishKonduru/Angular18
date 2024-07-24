@@ -1,5 +1,10 @@
-@for(msg of message; track msg){
+<!-- @for(msg of message; track msg){
     <h1 >Message in Demo Component: {{message}}</h1>
-}
+} -->
+<ng-content></ng-content>
 
+<mat-form-field appearance="outline">
+    <input matInput [(ngModel)] = 'childInput'>
+</mat-form-field>
+<h1 #childPara>This is demo's own para : {{childInput}} </h1>
 
