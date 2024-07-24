@@ -1,4 +1,4 @@
-.home-component{
+.comp1-component{
     text-align: center;
     border: #bbb 2px solid;
     padding-top: 40px;
@@ -8,14 +8,7 @@
     margin-right: 10px;
 
 }
-.component-container{
+.comp1-container{
     display: flex;
     text-align: center;
 }
-/* button{
-    width: 120px;
-    height: 30px;
-    border: none;
-    text-align: center;
-    background-color: coral;
-} */
