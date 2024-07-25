@@ -9,7 +9,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-import { authGuard } from './guards/auth.guard';
+import { authGuard, authGuardChild } from './guards/auth.guard';
+import { unsavedPageGuard } from './guards/unsaved-page.guard';
+import { canMatchAdminGuard, canMatchUserGuard } from './guards/can-match-admin.guard';
 
 
 export const routes: Routes = [
@@ -37,6 +39,7 @@ export const routes: Routes = [
     {
         path: 'selectedCourse/:course',
         component: SelectedCourseComponent,
+        canActivateChild: [authGuardChild],
         children: [
             {
                 path: 'selectedCourseDetails',
@@ -51,17 +54,23 @@ export const routes: Routes = [
     },
     {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        // canDeactivate: [unsavedPageGuard]
     },
     {
         path: 'userDashboard',
         component: UserDashboardComponent,
-        canActivate: [authGuard]
+        canActivate: [authGuard],
+        // data: {role: 'user'},
+        // canMatch: [canMatchUserGuard]
+        
     },
     {
         path: 'adminDashboard',
         component: AdminDashboardComponent,
         canActivate: [authGuard]
+        // data: { role: 'admin' },
+        // canMatch: [canMatchAdminGuard]
     },
     {
         path:'**',
