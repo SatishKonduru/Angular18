@@ -11,11 +11,12 @@ import { DemoComponent } from '../demo/demo.component';
 import { CommonModule } from '@angular/common';
 import { Comp1Component } from "../comp1/comp1.component";
 import { Comp2Component } from "../comp2/comp2.component";
+import { PercentagePipe } from '../../pipes/percentage.pipe';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AngularMaterialModule, AboutusComponent, ServicesComponent, ProductsComponent, CareersComponent, ContactusComponent, DemoComponent, CommonModule, Comp1Component, Comp2Component],
+  imports: [AngularMaterialModule, AboutusComponent, ServicesComponent, ProductsComponent, CareersComponent, ContactusComponent, DemoComponent, CommonModule, Comp1Component, Comp2Component, PercentagePipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 //  encapsulation: ViewEncapsulation.Emulated

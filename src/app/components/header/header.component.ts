@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { AngularMaterialModule } from '../../modules/angular-material/angular-material.module';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { PercentagePipe } from '../../pipes/percentage.pipe';
 
 @Component({
   selector: 'app-header', 
   standalone: true,
-  imports: [CommonModule, AngularMaterialModule, RouterModule],
+  imports: [CommonModule, AngularMaterialModule, RouterModule, PercentagePipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   preserveWhitespaces: true,
