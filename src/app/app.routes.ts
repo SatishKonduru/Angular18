@@ -13,6 +13,7 @@ import { authGuard, authGuardChild } from './guards/auth.guard';
 import { unsavedPageGuard } from './guards/unsaved-page.guard';
 import { canMatchAdminGuard, canMatchUserGuard } from './guards/can-match-admin.guard';
 import { BuiltInPipesComponent } from './components/built-in-pipes/built-in-pipes.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 export const routes: Routes = [
@@ -76,6 +77,10 @@ export const routes: Routes = [
     {
         path: 'pipes',
         component: BuiltInPipesComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
     },
     {
         path:'**',
