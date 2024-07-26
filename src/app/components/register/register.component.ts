@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularMaterialModule } from '../../modules/angular-material/angular-material.module';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { MatCalendar } from '@angular/material/datepicker';
 
 @Component({
@@ -13,4 +13,9 @@ import { MatCalendar } from '@angular/material/datepicker';
 })
 export class RegisterComponent {
 
+  formData: any
+  onSubmit(form: NgForm){
+    this.formData = form.value
+    console.log(form.controls.firstName.value)
+  }
 }
