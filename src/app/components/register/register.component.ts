@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularMaterialModule } from '../../modules/angular-material/angular-material.module';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MatCalendar } from '@angular/material/datepicker';
 
@@ -13,9 +13,20 @@ import { MatCalendar } from '@angular/material/datepicker';
 })
 export class RegisterComponent {
 
-  formData: any
+  formData: NgForm
   onSubmit(form: NgForm){
+    // form.controls['firstName'].setValue('Satish')
+    // form.controls.address.setValue({
+    //   address1: 'NDL',
+    //   address2: 'HUP'
+    // })
+    form.controls.address.patchValue({
+      address1: 'NDL'
+    })
     this.formData = form.value
-    console.log(form.controls.firstName.value)
+    console.log(this.formData)
+    // console.log("form:", form)
+    // console.log("Address 1:", form.controls.address.value.address1)
   }
+ 
 }
