@@ -14,6 +14,7 @@ import { unsavedPageGuard } from './guards/unsaved-page.guard';
 import { canMatchAdminGuard, canMatchUserGuard } from './guards/can-match-admin.guard';
 import { BuiltInPipesComponent } from './components/built-in-pipes/built-in-pipes.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 
 export const routes: Routes = [
@@ -81,6 +82,10 @@ export const routes: Routes = [
     {
         path: 'register',
         component: RegisterComponent
+    },
+    {
+        path: 'reactiveForm',
+        component: ReactiveFormComponent
     },
     {
         path:'**',
