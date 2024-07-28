@@ -1,19 +1,26 @@
 <div class="container w-50 mt-3 mx-auto ">
     <div class="col-12 mat-elevation-z10 p-2">
         <mat-toolbar style="background-color: pink; width: 100%;">Register (Reactive Form)</mat-toolbar>
-        <form class="form-group mt-3">
+        <form class="form-group mt-3" [formGroup]="registerForm">
             <!-- 1st row -->
             <div class="row d-flex">
                 <div class="col-6">
                     <mat-form-field appearance="outline" style="width: 100%;">
                         <mat-label>First Name:</mat-label>
-                        <input matInput placeholder="Enter First Name" >
+                        <input matInput placeholder="Enter First Name" formControlName="firstName">
+                        <mat-error>
+                            @if(registerForm.controls.firstName.touched && registerForm.controls.firstName.invalid){
+                                @if(registerForm.controls.firstName.errors?.required){
+                                    <span>First Name is Required</span>
+                                }
+                            }
+                        </mat-error>
                     </mat-form-field>
                 </div>
                 <div class="col-6">
                     <mat-form-field appearance="outline" style="width: 100%;">
                         <mat-label>Last Name:</mat-label>
-                        <input matInput placeholder="Enter Last Name" >
+                        <input matInput placeholder="Enter Last Name" formControlName="lastName">
                     </mat-form-field>
                 </div>
             </div>
@@ -22,8 +29,17 @@
                 <div class="col-12">
                     <mat-form-field appearance="outline" style="width: 100%;">
                         <mat-label>Email:</mat-label>
-                        <input matInput email placeholder="Enter Email" >
-                        
+                        <input matInput email placeholder="Enter Email" formControlName="email" email>
+                        <mat-error>
+                            @if(registerForm.controls.email.touched && registerForm.controls.email.invalid){
+                                @if(registerForm.controls.email.errors?.required){
+                                    <span>Email is Required</span>
+                                }
+                                @if(registerForm.controls.email.errors?.email){
+                                    <span>Invalid Email</span>
+                                }
+                            }
+                        </mat-error>
                     </mat-form-field>
                 </div>
             </div>
@@ -32,13 +48,13 @@
                 <div class="col-6">
                     <mat-form-field appearance="outline" style="width: 100%;">
                         <mat-label>Phone:</mat-label>
-                        <input matInput placeholder="Enter Phone Number" >
+                        <input matInput placeholder="Enter Phone Number" formControlName="phone">
                     </mat-form-field>
                 </div>
                 <div class="col-6">
                     <mat-form-field appearance="outline" style="width: 100%;">
                         <mat-label>Date of Birth</mat-label>
-                        <input matInput [matDatepicker]="picker" >
+                        <input matInput [matDatepicker]="picker" formControlName="dob">
                         <mat-hint>MM/DD/YYYY</mat-hint>
                         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
@@ -49,38 +65,52 @@
             <div class="row d-flex">
                 <div class="col-12">
                     <label>Gender: </label>
-                    <mat-radio-group >
+                    <mat-radio-group formControlName="gender">
                         <mat-radio-button value="Male" checked>Male</mat-radio-button>
                         <mat-radio-button value="Female">Female</mat-radio-button>
                         <mat-radio-button value="Other">Prefer not to say</mat-radio-button>
                     </mat-radio-group>
                 </div>
             </div>
+
+            <!-- checkbox -->
+            <div class="row d-flex">
+                <div class="col-12">
+                    <label>Select your Course:</label>
+                    <section class="d-flex">
+                        
+                        <p><mat-checkbox formControlName="Angular">Angular</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="Bootstrap">Bootstrap</mat-checkbox></p>
+                        <p><mat-checkbox formControlName="TailwindCSS">TailwindCSS</mat-checkbox></p>
+                      </section>
+                </div>
+            </div>
+
             <!-- 5th row -->
             <div class="row d-flex" >
                 <label>Address:</label>
-                <div class="col-12">
+                <div class="col-12" formGroupName="address">
                          <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Address line 1</mat-label>
-                            <input matInput placeholder="Enter address line 1">
+                            <input matInput placeholder="Enter address line 1" formControlName="address1">
                         </mat-form-field>
                 </div>
             </div>
             <!-- 6th row -->
             <div class="row d-flex" >
-                <div class="col-12">
+                <div class="col-12" formGroupName="address">
                         <mat-form-field appearance="outline" style="width: 100%;">
                             <mat-label>Address line 2</mat-label>
-                            <input matInput placeholder="Enter address line 2" >
+                            <input matInput placeholder="Enter address line 2" formControlName="address2" >
                         </mat-form-field>
                     </div>
             </div>
             <!-- 7th row -->
             <div class="row d-flex">
-                <div class="col-6">
+                <div class="col-6" formGroupName="address">
                     <mat-form-field appearance="outline" style="width: 100%;">
                         <mat-label>Country:</mat-label>
-                        <mat-select>
+                        <mat-select formControlName="country">
                             <mat-option value="India">India</mat-option>
                             <mat-option value="USA">USA</mat-option>
                             <mat-option value="Australia">Australia</mat-option>
@@ -89,37 +119,35 @@
                         </mat-select>
                     </mat-form-field>
                 </div>
-                <div class="col-6">
+                <div class="col-6" formGroupName="address">
                     <mat-form-field appearance="outline" style="width: 100%;">
                         <mat-label>City:</mat-label>
-                        <input matInput placeholder="Enter City Name" >
+                        <input matInput placeholder="Enter City Name" formControlName="city">
                     </mat-form-field>
                 </div>
             </div>
             <!-- 8th row -->
             <div class="row d-flex">
-                <div class="col-6">
+                <div class="col-6" formGroupName="address">
                     <mat-form-field appearance="outline" style="width: 100%;">
                         <mat-label>Region:</mat-label>
-                        <input matInput placeholder="Enter region Name">
+                        <input matInput placeholder="Enter region Name" formControlName="region">
                     </mat-form-field>
                 </div>
-                <div class="col-6">
+                <div class="col-6" formGroupName="address">
                     <mat-form-field appearance="outline" style="width: 100%;">
                         <mat-label>Postal Code:</mat-label>
-                        <input matInput placeholder="Enter Postal code" >
+                        <input matInput placeholder="Enter Postal code" formControlName="postalCode">
                     </mat-form-field>
                 </div>
             </div>
             <!-- 9th row -->
             <div class="row text-center">
                 <div class="col-12">
-                    <button mat-raised-button type="submit">Submit</button>
+                    <button mat-raised-button (click)="onClick()">Submit</button>
                 </div>
-                
-                 
-                </div>
-            
+            </div>
         </form>
+        {{this.registerForm.value | json}}
     </div>
 </div>
