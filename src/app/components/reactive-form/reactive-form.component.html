@@ -141,6 +141,57 @@
                     </mat-form-field>
                 </div>
             </div>
+         
+             @for(control of registerForm.controls.skills['controls'];track control; let i = $index){
+                <div class="co-12 d-flex">
+                    <div class="col-8 " formArrayName="skills">
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                            <mat-label>Add Skill</mat-label>
+                            <input matInput [formControlName]= 'i'>
+                     </mat-form-field>
+                    </div>
+                    <div class="col-4">
+                       <button mat-flat-button (click)="deleteSkill(i)">Delete</button>
+                    </div>
+                </div>
+               
+                }
+                <div class="row text-start">
+                    <div class="col-12">
+                        <button mat-raised-button (click)="addSkill()">Add Skill</button>
+                    </div>
+                </div>
+                
+                @for(exp of registerForm.controls.experience['controls']; track exp; let i = $index){
+                    
+                    <div formArrayName="experience">
+                        <div [formGroupName]="i" class="col-12 d-flex" >
+                            <div class="col-4">
+                                <mat-form-field appearance="outline" style="width:100%">
+                                    <mat-label>Company Name:</mat-label>
+                                    <input matInput formControlName="company_name">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-4">
+                                <mat-form-field appearance="outline" style="width:100%">
+                                    <mat-label>Location:</mat-label>
+                                    <input matInput formControlName="location">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-4">
+                                <button mat-flat-button (click)="deleteExperence(i)">Delete</button>
+                             </div>
+                        </div>
+                    </div>
+                }
+                    
+           
+                <div class="row text-start">
+                    <div class="col-12">
+                        <button mat-raised-button (click)="addExprience()">Add Experience</button>
+                    </div>
+                </div>
+                
             <!-- 9th row -->
             <div class="row text-center">
                 <div class="col-12">

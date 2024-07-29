@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { AngularMaterialModule } from '../../modules/angular-material/angular-material.module';
-import { EmailValidator, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { EmailValidator, FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -12,6 +12,7 @@ import { EmailValidator, FormControl, FormGroup, ReactiveFormsModule, Validators
 })
 export class ReactiveFormComponent implements OnInit {
   registerForm: any = FormGroup
+  cdRef = inject(ChangeDetectorRef)
 
     ngOnInit(): void {
       this.registerForm = new FormGroup({
@@ -31,15 +32,44 @@ export class ReactiveFormComponent implements OnInit {
           city: new FormControl(null),
           region: new FormControl(null),
           postalCode: new FormControl(null)
-        })
+        }),
+        skills: new FormArray([]),
+        experience: new FormArray([
+          new  FormGroup({
+            company_name: new FormControl(null),
+            location: new FormControl(null)
+          })
+        ])
         
       })
     }
     onClick(){
       const formData = this.registerForm.value
       console.log("Form Data: ", formData)
-      console.log("Form Data: ", formData.dob.toDateString())
-      console.log("Form Data: ", formData.dob.toGMTString())
-      console.log("Form Data: ", formData.dob.toLocaleDateString())
+      console.log("this.registerForm: ", this.registerForm)
+      console.log("Skills Form Data: ", formData.skills)
+  
+    } 
+    addSkill(){
+      (<FormArray>this.registerForm.controls.skills).push(new FormControl(null))
+      const formData = this.registerForm.value
+      console.log("Skills Form Data: ", formData.skills)
+    }
+    deleteSkill(index: any){
+      const control = (<FormArray>this.registerForm.controls.skills)
+      control.removeAt(index)
+    }
+    addExprience(){
+      (<FormArray>this.registerForm.controls.experience).push(new FormGroup({
+        company_name: new FormControl(null),
+        location: new FormControl(null)
+    }))
+    this.cdRef.detectChanges(); 
+    const formData = this.registerForm.value
+    console.log("Form Data:", formData)
+    }
+    deleteExperence(index: any){
+      const control = <FormArray>this.registerForm.controls.experience
+      control.removeAt(index)
     }
 }
