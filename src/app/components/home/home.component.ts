@@ -1,4 +1,4 @@
-import { Component, computed, signal, ViewEncapsulation } from '@angular/core';
+import { Component, computed, inject, signal, ViewEncapsulation } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 import { AngularMaterialModule } from '../../modules/angular-material/angular-material.module';
@@ -16,6 +16,8 @@ import { SignalsComponent } from "../signals/signals.component";
 import { lastValueFrom } from 'rxjs';
 import { NgTemplateComponent } from "../ng-template/ng-template.component";
 import { NgContainerComponent } from "../ng-container/ng-container.component";
+import { HttpClient } from '@angular/common/http';
+import { CourseService } from '../../services/course.service';
 
 interface myCounter {
   value: number
@@ -48,6 +50,8 @@ export class HomeComponent {
   })
   ngOnInit(){
     setInterval(()=>{this.check++},1000)
+    // this.putPosts()
+    this.getPosts()
   }
   myInputValue = ''
   // constructor(){
@@ -113,4 +117,33 @@ export class HomeComponent {
   remove(){
     // this.counter().pop()
   }
+
+  http = inject(HttpClient)
+  url = 'http://localhost:3000'
+  myService = inject(CourseService)
+  posts = []
+ putPosts(){
+    this.myService.putPosts().subscribe({
+      next: (res: any) => {
+        console.log("Data Saved.")
+      },
+      error: (err:any) => {
+        console.log("Error while saving data")
+      }
+    })
+  }
+
+  getPosts(){
+    this.http.get<any>(`${this.url}/posts`).subscribe({
+      next: (res: any) => {
+        this.posts = res
+        console.log("this.posts: ", this.posts)
+      },
+      error: (err: any) => {
+        console.log("Error:", err)
+      }
+    })
+  }
+
+
 }
