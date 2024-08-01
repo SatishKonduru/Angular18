@@ -1,0 +1,15 @@
+@if(check){
+    <ng-container>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quidem iste debitis velit praesentium explicabo reiciendis, blanditiis enim. Excepturi quis soluta dolorum incidunt quibusdam? Delectus odit vel ex sit unde.</p>
+        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, eligendi vitae ullam unde repellat consequatur vel repudiandae asperiores rerum, aliquid alias minima nobis. Possimus quo praesentium hic itaque dolores provident.</h4>
+        <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit nemo repudiandae natus pariatur assumenda culpa ipsa, iure libero similique magnam, sed totam at doloribus enim. Odit, temporibus sint. Quidem!</h6>
+    </ng-container>
+}
+@else {
+    <ng-container>
+        <p style="color: red;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quidem iste debitis velit praesentium explicabo reiciendis, blanditiis enim. Excepturi quis soluta dolorum incidunt quibusdam? Delectus odit vel ex sit unde.</p>
+        <h4 style="color: red;">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, eligendi vitae ullam unde repellat consequatur vel repudiandae asperiores rerum, aliquid alias minima nobis. Possimus quo praesentium hic itaque dolores provident.</h4>
+        <h6 style="color: red;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sit nemo repudiandae natus pariatur assumenda culpa ipsa, iure libero similique magnam, sed totam at doloribus enim. Odit, temporibus sint. Quidem!</h6>
+    </ng-container>
+}
+<button mat-raised-button (click)="toggle()">Show/Hide</button>

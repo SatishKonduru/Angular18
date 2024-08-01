@@ -14,6 +14,8 @@ import { Comp2Component } from "../comp2/comp2.component";
 import { PercentagePipe } from '../../pipes/percentage.pipe';
 import { SignalsComponent } from "../signals/signals.component";
 import { lastValueFrom } from 'rxjs';
+import { NgTemplateComponent } from "../ng-template/ng-template.component";
+import { NgContainerComponent } from "../ng-container/ng-container.component";
 
 interface myCounter {
   value: number
@@ -21,10 +23,11 @@ interface myCounter {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AngularMaterialModule, AboutusComponent, ServicesComponent, ProductsComponent, CareersComponent, ContactusComponent, DemoComponent, CommonModule, Comp1Component, Comp2Component, PercentagePipe, SignalsComponent],
+  imports: [AngularMaterialModule, AboutusComponent, ServicesComponent, ProductsComponent, CareersComponent, ContactusComponent, DemoComponent, CommonModule, Comp1Component, Comp2Component, PercentagePipe, SignalsComponent, NgTemplateComponent, NgContainerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  preserveWhitespaces: true
+  preserveWhitespaces: true,
+  
 //  encapsulation: ViewEncapsulation.Emulated
 })
 export class HomeComponent {

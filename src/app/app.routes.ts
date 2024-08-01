@@ -88,6 +88,10 @@ export const routes: Routes = [
         component: ReactiveFormComponent
     },
     {
+        path: 'lazy',
+        loadComponent: () => import('./components/lazy-comp/lazy-comp.component').then(comp => comp.LazyCompComponent)
+    },
+    {
         path:'**',
         component: PageNotFoundComponent
     }
