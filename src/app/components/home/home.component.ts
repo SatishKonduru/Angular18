@@ -18,6 +18,9 @@ import { NgTemplateComponent } from "../ng-template/ng-template.component";
 import { NgContainerComponent } from "../ng-container/ng-container.component";
 import { HttpClient } from '@angular/common/http';
 import { CourseService } from '../../services/course.service';
+import {ToastrModule, ToastrService} from 'ngx-toastr'
+import { toastr } from '../toastr';
+
 
 interface myCounter {
   value: number
@@ -25,7 +28,7 @@ interface myCounter {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AngularMaterialModule, AboutusComponent, ServicesComponent, ProductsComponent, CareersComponent, ContactusComponent, DemoComponent, CommonModule, Comp1Component, Comp2Component, PercentagePipe, SignalsComponent, NgTemplateComponent, NgContainerComponent],
+  imports: [AngularMaterialModule, AboutusComponent, ServicesComponent, ProductsComponent, CareersComponent, ContactusComponent, DemoComponent, CommonModule, Comp1Component, Comp2Component, PercentagePipe, SignalsComponent, NgTemplateComponent, NgContainerComponent, ToastrModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   preserveWhitespaces: true,
@@ -33,6 +36,7 @@ interface myCounter {
 //  encapsulation: ViewEncapsulation.Emulated
 })
 export class HomeComponent {
+  toastrService = inject(ToastrService)
   inputValue = ['Konduru']
   check = 0
   // counter = signal<myCounter>({
@@ -144,6 +148,22 @@ export class HomeComponent {
       }
     })
   }
-
-
+  toastrConfig  = {
+    maxOpened : 0,
+    preventDuplicates : true,
+    closeButton: true,
+    timeOut : 5000,
+    easing: 'ease-in',
+    progressBar: true,
+    toastClass: 'ngx-toastr',
+    positionClass: 'toast-top-right',
+    titleClass: 'toast-title',
+    massageClass: 'toast-message',
+    topToDismiss: true
+}
+  showToastr(){
+    // this.toastrService.success('Message','Title', toastr.toastrConfig)
+    // this.toastrService.success('Hello world!', 'Toastr fun!');
+    this.toastrService.error('Message','Title');
+  }
 }

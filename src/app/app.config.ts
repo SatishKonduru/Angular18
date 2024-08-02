@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
 import { provideNativeDateAdapter } from '@angular/material/core';
+import { provideToastr } from 'ngx-toastr';
 
 
 export const appConfig: ApplicationConfig = {
@@ -13,7 +14,8 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withHashLocation()), 
     provideAnimationsAsync(),
     provideHttpClient(),
-    provideNativeDateAdapter()
-   
+    provideNativeDateAdapter(),
+    provideToastr()
+    
   ]
 };
