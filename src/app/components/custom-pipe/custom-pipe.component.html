@@ -1,0 +1,54 @@
+<!-- <h3>Percentage : {{(score/total) | percentage}}</h3> -->
+
+<div class="container mt-3">
+    <div class="row col-4 mx-auto">
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Score: </mat-label>
+            <input matInput #input>
+        </mat-form-field>
+
+    </div>
+    <div class="row col-2 mx-auto">
+        <button mat-stroked-button (click)="onClick(input.value)">Submit</button>
+    </div>
+</div>
+@if(score){
+    <h3>Percentage : {{score | percentage : total :3}}</h3>
+}
+<div class="container mt-3">
+    <div class="row col-4 mx-auto">
+        <mat-form-field appearance="outline">
+            <mat-label>Filter by...</mat-label>
+            <mat-select (selectionChange)="onSelect($event)" [value]="filterText">
+                <mat-option value="All" selected>All</mat-option>
+                <mat-option value="Male">Male</mat-option>
+                <mat-option value="Female">Female</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="row col-6 mx-auto">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @for(std of students | filter: filterText ; track std){
+                   
+                        <tr>
+                            <td>{{std.name}}</td>
+                            <td>{{std.age}}</td>
+                            <td>{{std.gender}}</td>
+                        </tr>
+                  
+                   
+                }
+            </tbody>
+        </table>
+    </div>
+    <button mat-raised-button (click)="addNewData()">Add</button>
+</div>

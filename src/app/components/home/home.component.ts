@@ -20,6 +20,7 @@ import { HttpClient } from '@angular/common/http';
 import { CourseService } from '../../services/course.service';
 import {ToastrModule, ToastrService} from 'ngx-toastr'
 import { toastr } from '../toastr';
+import { CustomPipeComponent } from "../custom-pipe/custom-pipe.component";
 
 
 interface myCounter {
@@ -28,7 +29,7 @@ interface myCounter {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AngularMaterialModule, AboutusComponent, ServicesComponent, ProductsComponent, CareersComponent, ContactusComponent, DemoComponent, CommonModule, Comp1Component, Comp2Component, PercentagePipe, SignalsComponent, NgTemplateComponent, NgContainerComponent, ToastrModule],
+  imports: [AngularMaterialModule, AboutusComponent, ServicesComponent, ProductsComponent, CareersComponent, ContactusComponent, DemoComponent, CommonModule, Comp1Component, Comp2Component, PercentagePipe, SignalsComponent, NgTemplateComponent, NgContainerComponent, ToastrModule, CustomPipeComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   preserveWhitespaces: true,

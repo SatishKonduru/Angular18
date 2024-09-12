@@ -6,8 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PercentagePipe implements PipeTransform {
 
-  transform(value: any){
-    return (value * 100)+'%' ;
+  transform(score: any, total: any, decimal = 2){
+    console.log("Percentage Pipe is Called.....")
+    return ((score/total) * 100).toFixed(decimal)+'%' ;
   }
 
 }
